@@ -205,16 +205,17 @@ for (i in 1:length(zips)){
   
   
   #Create dummy df to put info into
-  trul <- data.frame(Post_Title = as.character(),
-                     Address = as.character(),
-                     Price = as.character(),
-                     Beds = as.character(),
-                     Baths = as.character(),
-                     SQFT = as.character(),
-                     Pets = as.character(),
-                     Desc = as.character(),
-                     Scrape_Date = as.character(),
-                     Scrape_Zip = as.character()
+  trul <- data.frame(post_title = as.character(),
+                     address = as.character(),
+                     price = as.character(),
+                     beds = as.character(),
+                     baths = as.character(),
+                     sqft = as.character(),
+                     pets = as.character(),
+                     desc = as.character(),
+                     scrape_date = as.character(),
+                     scrape_zip = as.character(),
+                     link = as.character()
   )
   
   for (j in 1:length(pl)){
@@ -404,16 +405,17 @@ for (i in 1:length(zips)){
           desc <- NA
         }
         
-        gtrul <- data.frame(Post_Title = ptit,
-                            Address = padd,
-                            Price = tpr,
-                            Beds = bds,
-                            Baths = bths,
-                            SQFT = SQFT,
-                            Pets = pets,
-                            Desc = desc,
-                            Scrape_Date = Sys.time(),
-                            Scrape_Zip = zips[i])
+        gtrul <- data.frame(post_title = ptit,
+                            address = padd,
+                            price = tpr,
+                            beds = bds,
+                            baths = bths,
+                            sqft = SQFT,
+                            pets = pets,
+                            desc = desc,
+                            scrape_date = Sys.time(),
+                            scrape_zip = zips[i],
+                            link = lurl)
         trul <- rbind(trul, gtrul)
         
         #####
@@ -520,16 +522,17 @@ for (i in 1:length(zips)){
         desc <- NA
       }
       
-      gtrul <- data.frame(Post_Title = ptit,
-                          Address = padd,
-                          Price = tpr,
-                          Beds = bds,
-                          Baths = bths,
-                          SQFT = SQFT,
-                          Pets = pets,
-                          Desc = desc,
-                          Scrape_Date = Sys.time(),
-                          Scrape_Zip = zips[i])
+      gtrul <- data.frame(post_title = ptit,
+                          address = padd,
+                          price = tpr,
+                          beds = bds,
+                          baths = bths,
+                          sqft = SQFT,
+                          pets = pets,
+                          desc = desc,
+                          scrape_date = Sys.time(),
+                          scrape_zip = zips[i],
+                          link = lurl)
       trul <- rbind(trul, gtrul)
       
       #####
