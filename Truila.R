@@ -6,6 +6,7 @@ library(XML)
 library(xml2)
 library(jsonlite)
 library(curl)
+library(civis)
 
 #####   TRULIA   #####
 #options(timeout= 4000000)
@@ -51,7 +52,7 @@ zips <- {c("02118",
 znw <- "_zip/"
 pnw <- "_p/"
 
-#i<- 15
+curs <- read_civis("sandbox.trulia_master")
 
 mtr <- data.frame(Post_Title = as.character(),
                   Address = as.character(),
@@ -540,10 +541,5 @@ for (i in 1:length(zips)){
 
 mtr <- unique(mtr)
 write_civis(mtw, tablename = "sandbox.trulia_master", if_exists = "append")
-
-
-
-
-
 
 
