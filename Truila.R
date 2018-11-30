@@ -54,16 +54,16 @@ pnw <- "_p/"
 
 curs <- read_civis("sandbox.trulia_master", database = "City of Boston")
 
-mtr <- data.frame(Post_Title = as.character(),
-                  Address = as.character(),
-                  Price = as.character(),
-                  Beds = as.character(),
-                  Baths = as.character(),
-                  SQFT = as.character(),
-                  Pets = as.character(),
-                  Desc = as.character(),
-                  Scrape_Date = as.character(),
-                  Scrape_Zip = as.character()
+mtr <- data.frame(post_title = as.character(),
+                  address = as.character(),
+                  price = as.character(),
+                  beds = as.character(),
+                  baths = as.character(),
+                  sqft = as.character(),
+                  pets = as.character(),
+                  desc = as.character(),
+                  scrape_date = as.character(),
+                  scrape_zip = as.character()
 )
 
 
