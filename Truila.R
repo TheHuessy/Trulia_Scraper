@@ -6,6 +6,7 @@ library(XML)
 library(xml2)
 library(jsonlite)
 library(curl)
+library(civis)
 
 #####   TRULIA   #####
 #options(timeout= 4000000)
