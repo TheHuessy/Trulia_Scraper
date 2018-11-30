@@ -539,6 +539,11 @@ for (i in 1:length(zips)){
 } #END OF ZIPS LOOP
 
 mtr <- unique(mtr)
- curs <- read.csv("/home/james/Documents/Trulia/Trulia.csv", stringsAsFactors = FALSE)
- mtw <- rbind(curs, mtr)
-write.csv(mtw, "/home/james/Documents/Trulia/Trulia.csv", row.names = FALSE)
+write_civis(mtw, tablename = "sandbox.trulia_master", if_exists = "append")
+
+
+
+
+
+
+
