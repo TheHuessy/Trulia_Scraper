@@ -52,7 +52,7 @@ zips <- {c("02118",
 znw <- "_zip/"
 pnw <- "_p/"
 
-curs <- read_civis("sandbox.trulia_master")
+curs <- read_civis("sandbox.trulia_master", database = "City of Boston")
 
 mtr <- data.frame(Post_Title = as.character(),
                   Address = as.character(),
@@ -220,6 +220,13 @@ for (i in 1:length(zips)){
   for (j in 1:length(pl)){
     #Generate Link URL
     lurl <- paste("https://www.trulia.com", pl[j], sep = "")
+    
+    print(paste("CHECKING FOR DUPLICATE URL"))
+    if (lurl %in% curs$link){
+      print(paste("URL", j, "EXISTS IN DATASET"))
+      next
+    }
+    
     #Load Listing
     slp <- sample(1:6, 1)
     print(paste("Sleeping for", slp, "seconds at", Sys.time()))
