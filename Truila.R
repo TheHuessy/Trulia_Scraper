@@ -130,6 +130,12 @@ for (i in 1:length(zips)){
   print(paste("FOUND", mp, "PAGES"))
   #####
   
+  if (mp == -Inf){
+    print(paste(mp, "Pages? Skipping..."))
+    print(zurl)
+    next
+  }
+  
   ##FOR LOOP FOR GETTING PAGES
   
   for(t in 2:mp){
