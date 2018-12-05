@@ -67,8 +67,8 @@ mtr <- data.frame(post_title = as.character(),
 )
 
 
-#for (i in 1:length(zips)){
-for (i in 1){
+for (i in 1:length(zips)){
+#for (i in 1){
   zurl <- paste(Tr.burl, zips[i], znw, sep = "")
   
   #####
