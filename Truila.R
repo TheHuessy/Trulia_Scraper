@@ -52,7 +52,7 @@ zips <- {c("02118",
 znw <- "_zip/"
 pnw <- "_p/"
 
-curs <- read_civis("sandbox.trulia_master", database = "City of Boston")
+
 
 mtr <- data.frame(post_title = as.character(),
                   address = as.character(),
@@ -67,8 +67,8 @@ mtr <- data.frame(post_title = as.character(),
 )
 
 
-for (i in 1:length(zips)){
-#for (i in 1){
+#for (i in 1:length(zips)){
+for (i in 1){
   zurl <- paste(Tr.burl, zips[i], znw, sep = "")
   
   #####
@@ -228,11 +228,11 @@ for (i in 1:length(zips)){
     #Generate Link URL
     lurl <- paste("https://www.trulia.com", pl[j], sep = "")
     
-    print(paste("CHECKING FOR DUPLICATE URL"))
-    if (lurl %in% curs$link){
-      print(paste("URL", j, "EXISTS IN DATASET"))
-      next
-    }
+    # print(paste("CHECKING FOR DUPLICATE URL"))
+    # if (lurl %in% curs$link){
+    #   print(paste("URL", j, "EXISTS IN DATASET"))
+    #   next
+    # }
     
     #Load Listing
     slp <- sample(1:6, 1)
@@ -556,6 +556,8 @@ for (i in 1:length(zips)){
 } #END OF ZIPS LOOP
 
 mtr <- unique(mtr)
-write_civis(mtw, tablename = "sandbox.trulia_master", if_exists = "append")
+
+write_civis(mtr, tablename = "sandbox.trulia_master", if_exists = "append")
+write_civis(mtr, tablename = "sandbox.trulia_daily", if_exists = "drop")
 
 
