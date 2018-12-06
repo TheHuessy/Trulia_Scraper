@@ -75,7 +75,7 @@ for (i in 1:length(zips)){
   print("ZIP LANDING PAGE TRY CATCH STARTED")
   #####
   
-  slp <- sample(1:6, 1)
+  slp <- sample(1:10, 1)
   print(paste("Sleeping for", slp, "seconds at", Sys.time()))
   Sys.sleep(slp)
   
@@ -95,7 +95,7 @@ for (i in 1:length(zips)){
   print("ZIP LANDING PAGE TRY CATCH SUCCESS")
   #####
   
-  slp <- sample(1:5, 1)
+  slp <- sample(1:10, 1)
   print(paste("Sleeping for", slp, "seconds at", Sys.time()))
   Sys.sleep(slp)
   
@@ -148,7 +148,7 @@ for (i in 1:length(zips)){
     #generated paginated link
     it.url <- paste(paste(Tr.burl, zips[i], znw, t, pnw, sep = ""))
     #grabbing each page's links
-    slp <- sample(1:6, 1)
+    slp <- sample(1:10, 1)
     print(paste("Sleeping for", slp, "seconds at", Sys.time()))
     Sys.sleep(slp)
     
@@ -182,7 +182,7 @@ for (i in 1:length(zips)){
     print(paste("TRY CATCH FOR PAGE", t, "OF", mp, "SUCCESS"))
     #####
     
-    slp <- sample(1:5, 1)
+    slp <- sample(1:10, 1)
     print(paste("Sleeping for", slp, "seconds at", Sys.time()))
     Sys.sleep(slp)
     
@@ -235,7 +235,7 @@ for (i in 1:length(zips)){
     # }
     
     #Load Listing
-    slp <- sample(1:6, 1)
+    slp <- sample(1:10, 1)
     print(paste("Sleeping for", slp, "seconds at", Sys.time()))
     Sys.sleep(slp)
     
@@ -270,7 +270,7 @@ for (i in 1:length(zips)){
     print(paste("TRY CATCH FOR LINK", j, "OF", length(pl), "SUCCESS FOR ZIP", i, "OF", length(zips)))
     #####
     
-    slp <- sample(1:5, 1)
+    slp <- sample(1:10, 1)
     print(paste("Sleeping for", slp, "seconds at", Sys.time()))
     Sys.sleep(slp)
     
@@ -545,6 +545,10 @@ for (i in 1:length(zips)){
       print(paste("++++","FINISHED LINK", j, "OF", length(pl), "FOR ZIP", i, "OF", length(zips), "++++"))
       #####
       
+       slp <- sample(40:80, 1)
+    print(paste("Super Sleeping for", slp, "seconds at", Sys.time()))
+    Sys.sleep(slp)
+      
     } #END OF ELSE STATEMENT THAT ASSUMES THERE IS JUST ONE APARTMENT LISTED IN THIS LINK
   } #END OF ALL LINKS LOOP
   #putting the scraped links together for the entire zip
@@ -553,6 +557,10 @@ for (i in 1:length(zips)){
   #####
   print(paste("++++", "FINISHED ZIP", i, "OF", length(zips), "++++"))
   #####
+  
+         slp <- sample(40:80, 1)
+    print(paste("Super Sleeping for", slp, "seconds at", Sys.time()))
+    Sys.sleep(slp)
 } #END OF ZIPS LOOP
 
 mtr <- unique(mtr)
