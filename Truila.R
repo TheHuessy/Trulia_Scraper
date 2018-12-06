@@ -80,7 +80,8 @@ for (i in 1:length(zips)){
   Sys.sleep(slp)
   
   chka <-  tryCatch({
-    getURL(zurl) %>%
+    #getURL(zurl) %>%
+     GET(zurl) %>%
       read_html()
   },
   error = function(e){e}
@@ -101,7 +102,8 @@ for (i in 1:length(zips)){
   
   
   #Getting around their F**king 403 wall
-  gh <- getURL(zurl) %>%
+  #gh <- getURL(zurl) %>%
+  gh <- GET(zurl) %>%
     read_html()
   
   #####
@@ -157,7 +159,8 @@ for (i in 1:length(zips)){
     #####
     
     chka <-  tryCatch({
-      getURL(it.url) %>%
+      #getURL(it.url) %>%
+      GET(it.url) %>%
         read_html()
     },
     error = function(e){e}
@@ -166,7 +169,8 @@ for (i in 1:length(zips)){
     if(inherits(chka, "error")) {
       print("URL Broken... Trying Again")
       chka <-  tryCatch({
-        getURL(it.url) %>%
+        #getURL(it.url) %>%
+        GET(it.url) %>%
           read_html()
       },
       error = function(e){e}
@@ -190,7 +194,8 @@ for (i in 1:length(zips)){
     print(paste("READING PAGE", t, "OF", mp))
     #####
     
-    pll <- getURL(it.url) %>%
+    #pll <- getURL(it.url) %>%
+    pll <- GET(it.url) %>%
       read_html()
     mpl <- pll %>%
       html_nodes(".xsCol12Landscape.smlCol12.lrgCol8") %>%
@@ -244,7 +249,8 @@ for (i in 1:length(zips)){
     #####
     
     chka <-  tryCatch({
-      getURL(lurl) %>%
+      #getURL(lurl) %>%
+       GET(lurl) %>%
         read_html()
     },
     error = function(e){e}
@@ -253,7 +259,8 @@ for (i in 1:length(zips)){
     if(inherits(chka, "error")) {
       print("URL Broken... Trying Again")
       chka <-  tryCatch({
-        getURL(lurl) %>%
+        #getURL(lurl) %>%
+        GET(lurl) %>%
           read_html()
       },
       error = function(e){e}
@@ -268,13 +275,15 @@ for (i in 1:length(zips)){
     
     #####
     print(paste("TRY CATCH FOR LINK", j, "OF", length(pl), "SUCCESS FOR ZIP", i, "OF", length(zips)))
+    print(lurl)
     #####
     
     slp <- sample(1:10, 1)
     print(paste("Sleeping for", slp, "seconds at", Sys.time()))
     Sys.sleep(slp)
     
-    lst <- getURL(lurl) %>%
+    #lst <- getURL(lurl) %>%
+    lst <- GET(lurl) %>%
       read_html()
     
     
